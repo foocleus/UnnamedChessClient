@@ -27,17 +27,17 @@ export default class HtmlTableBoard implements IBoard
     {
         //TODO: Queue update and push afterwards using DocumentFragment
 
-        for (let y = 1; y < 8; y++)
+        for (let y = 8; y > 1; y--)
         {
             let boardRow: HTMLElement = document.createElement("tr");
-            boardRow.id = String.fromCharCode(96 + y);
+            boardRow.id = String(y);
 
             for (let x = 1; x < 8; x++)
             {
                 let boardCell: HTMLElement = document.createElement("td");
-                boardCell.id = boardRow.id + String(x);
+                boardCell.id = String.fromCharCode(96 + x); boardRow.id;
                 // console.log(`${x} + (${y} % 2) % 2 == 0  ${x + (y % 2)}`)
-                boardCell.className = (x + y % 2) % 2 == 1 ? "black-cell" : "white-cell";
+                boardCell.className = (x + y % 2) % 2 == 0 ? "black-cell" : "white-cell";
                 boardRow.append(boardCell);
             }
 

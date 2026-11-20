@@ -1,5 +1,6 @@
 import type { Property } from "csstype";
 import type ITheme from "./ITheme.js"
+import type Piece from "../Utils/Piece.js"
 
 class DefaultTheme implements ITheme
 {
@@ -11,7 +12,7 @@ class DefaultTheme implements ITheme
     {
         return ["#af8360", "#f0dab5"];
     }
-    getPiecesSprites(): Array<Array<string>>
+    getPiecesSprites(): Map<string, Map<Piece, string>>
     {
         throw new Error("Method not implemented.");
     }
